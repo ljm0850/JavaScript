@@ -189,3 +189,31 @@ textInput.addEventListener('input', function (event) {
 
 - 현재 이벤트의 기본 동작을 중단
   - 취소 불가능한 이벤트도 있음
+
+
+
+### Event 종류
+
+- User Interface Events
+  - load
+  - unload
+  - error
+  - select
+- Focus Events
+  - focusin
+  - focus
+  - focusout
+  - blur
+- Mouse Events
+  - onclick
+  - ondbclick
+  - onmousedown
+  - onmouseup
+  - onmouseover
+- Input Events
+  - input
+  - beforeinput
+- Keyboard Events
+  - keyup
+  - keydown
+  - keypress
