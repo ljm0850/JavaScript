@@ -31,7 +31,7 @@
 1. EventTarget
    - Event Listener를 가질 수 있는 객체가 구현하는 DOM 인터 페이스
 2. Node
-   - 여러 DOM 타입들이 사ㅣㅇ속하는 인터페이스
+   - 여러 DOM 타입들이 상속하는 인터페이스
 3. Element
    - Document 안의 모든 객체가 상속하는 범용적인 인터페이스
 
