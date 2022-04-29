@@ -406,6 +406,18 @@ console.log(me.fullName)			// NaN
 console.log(me.getFullName())		// jml
 ```
 
+```javascript
+const obj = {
+    PI = 3.14,
+    radiuses = [1,2,3],
+    printArea: function(){
+        this.radiuses.forEach(function(r){
+            console.log(this.PI * r * r)		// 여기서의 this는 메스드에서 호출한 것이 아니라 window를 의미, bind를 이용하여 this = obj를 의미하게 설계 or arrowFunction 이용
+        }.bind(this)
+    }
+}
+```
+
 - 메서드는 객체의 속성이 참조하는 함수
 - 객체.메서드명()으로 호출 가능
 - 매서드 내부에서는 this가 객체를 의미
