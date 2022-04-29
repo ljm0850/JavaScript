@@ -139,6 +139,26 @@ ulTag.append(newLiTag)
 
 #### DOM 속성 관련 메서드
 
+```javascript
+const body = document.querySelector('body')
+const grayBtn = document.querySelector('#grayButton')
+const whiteBtn = document.querySelector('#whiteButton')
+const navyBtn = document.querySelector('#navyButton')
+// type1
+grayBtn.addEventListener('click',function (event) {
+      body.setAttribute('style','background-color:gray; color:white')
+    })
+// type2
+whiteBtn.addEventListener('click',function (event){
+    body.style.color = 'black'
+    body.style.backgroundColor = 'gray'
+})
+//type3
+navyBtn.addEventListener('click',function(event){
+    body.classList.add('navy-theme')			// navy-theme 라는 css를 설정 해둬야함
+})
+```
+
 - Element.setAttribute(name, value)
   - 지정된 요소의 값을 설정
   - 속성이 이미 존재하면 값을 갱신, 없을경우 추가
