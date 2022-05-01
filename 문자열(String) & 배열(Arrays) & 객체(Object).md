@@ -453,7 +453,7 @@ const bookshop = {
 
 ```javascript
 const obj ={
-    greeting(){//greeting: function(){
+    greeting(){//greeting = function(){
         
     }
 }
