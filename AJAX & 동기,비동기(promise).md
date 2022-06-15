@@ -1,4 +1,4 @@
-# AJAX
+# AJAX & 동기식,비동기식
 
 - Asynchronous JavaScript And XML (비동기식 JavaScript와 XML)
 
@@ -24,6 +24,16 @@ request.open('GET', URL)
 
 
 
+#### Axios
+
+- 브라우저를 위한 Promise(뒤에 서술) 기반의 클라이언트
+
+- 브라우저 내장 객체인 XHR를 활용하여 AJAX 요청 처리보다 편리하게 도움을 줌
+
+  - 간편한 라이브러리 제공
+
+
+
 ## Asynchronous JavaScript
 
 ### 동기식
@@ -38,6 +48,8 @@ request.open('GET', URL)
 
 - 병렬적 Task 수행
 - 요청을 보낸 후 응답을 기다리지 않고 다음 동작 수행(non-blocking)
+- single thread로 비동기 처리
+  - multi thread를 이용하여 여러 작업을 처리 하는 개념이 아님
 
 ```javascript
 console.log('start')
@@ -165,15 +177,13 @@ work1().then(function(result1) {
   - 결과와 상관없이 지정된 callbcak 함수가 실행
   - 어떠한 인자도 전달받지 않음
 
-#### Axios
 
-- 브라우저를 위한 Promise 기반의 클라이언트
 
-- 브라우저 내장 객체인 XHR를 활용하여 AJAX 요청 처리보다 편리하게 도움을 줌
+#### Promise.resolve()
 
-  - 간편한 라이브러리 제공
+- Promise.resolve(value) 메서드는 주어진 값으로 이행하는 Promise.then 객체 반환(https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
 
-  
+
 
 ### async & await
 
@@ -188,5 +198,17 @@ async function changeImg() {
       const uri = await axios.get(API_URI)
       const response1 = uri.data.message 
       // 함수 앞에 async, 비동기 코드 앞에 await 
+```
+
+```javascript
+const target = ['a','b','c','d','e']
+
+async function asc(){
+
+  for(const item of target){
+    const res = await request(item) // request는 또 다른 async 함수
+    console.log(res)
+  }
+}
 ```
 
