@@ -185,6 +185,29 @@ work1().then(function(result1) {
 
 
 
+#### Promise.all()
+
+- `()`안의 순회 가능한 객체(array...)에 주어진 모든 프로미스가 이행된 뒤 이행하는 Promise를 반환
+
+- 주어진 프로미스중 하나가 거부할 경우 같은 이유로 Promise.all이 거부됨
+
+```javascript
+const promise1 = Promise.resolve(123);
+const promise2 = 45;
+const promise3 = new Promise((resovle,reject)=>{
+    setTimeout(resolve,100,'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then((valutes)=>{
+	console.log(values)
+})
+// Array[123,45,"foo"]
+```
+
+
+
+
+
 ### async & await
 
 - 비동기 코드를 작성하는 새로운 방법
